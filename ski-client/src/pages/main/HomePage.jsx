@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../../components/header/Header";
 import ResortsSlider from "../../components/resorts/Resorts";
+import ShopPage from "../shop/ShopPage";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -33,8 +35,21 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="pt-10 pb-20">
         <ResortsSlider />
+      </div>
+      <div>
+        <div className="flex justify-between items-center px-8">
+          <h2 className="text-2xl font-semibold">Магазины проката снаряжения</h2>
+          <Link
+            to={"/shops"}
+            className="text-sm text-gray-500 hover:text-black"
+          >
+            More
+          </Link>
+        </div>
+        <hr className="my-2 mx-8" />
+        <ShopPage />
       </div>
     </>
   );
