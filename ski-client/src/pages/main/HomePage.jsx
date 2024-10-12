@@ -30,7 +30,7 @@ const HomePage = () => {
               комфортом!
             </p>
             <button className="mt-10 px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white text-lg md:text-xl rounded-full shadow-md transition-transform duration-300 ease-in-out transform hover:scale-105 animate-bounce">
-              Посмотреть снаряжение
+              Подобрать магазин
             </button>
           </div>
         </div>

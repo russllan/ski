@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { FaStar } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 
 const toursData = [
   {
@@ -69,6 +69,8 @@ const ShopsPage = () => {
     selectedLocation === "All"
       ? toursData
       : toursData.filter((tour) => tour.location === selectedLocation);
+
+  const navigate = useNavigate();
 
   return (
     <div className="container mx-auto p-4">
@@ -145,7 +147,7 @@ const ShopsPage = () => {
             <div
               key={index}
               className="bg-white shadow-lg overflow-hidden relative w-[350px] cursor-pointer" // Задаем фиксированную ширину для карточек
-              onClick={() => 'hello'}
+              onClick={() => navigate('/branch')}
             >
               <img
                 src={tour.image}
