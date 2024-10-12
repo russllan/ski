@@ -6,7 +6,7 @@ const Header = () => {
     <header className="flex justify-between items-center py-4 px-8 bg-white shadow-md">
       {/* Логотип */}
       <Link to={"/"} className="text-2xl font-bold">
-        SkiHub
+        TooDo
       </Link>
 
       {/* Навигационные ссылки */}
