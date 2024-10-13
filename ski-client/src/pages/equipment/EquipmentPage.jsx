@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { equipment } from "../../constants/equipment";
 
 function EquipmentPage() {
+  const navigate = useNavigate();
+
+  const addBasket = (item) => {
+    console.log(item);
+
+    let cart = JSON.parse(localStorage.getItem("basketData")) || [];
+
+    cart?.push(item);
+
+    localStorage.setItem("basketData", JSON.stringify(cart));
+    navigate("/cart");
+  };
+
+  useEffect(() => {
+    localStorage.setItem("equipmentData", JSON.stringify(equipment));
+  }, []);
+
   return (
     <div className="container mx-auto p-6">
       {/* Главный контейнер */}
@@ -117,18 +135,23 @@ function EquipmentPage() {
                 </div>
                 <div className="h-30">
                   <div className="flex gap-8 py-3">
-                    <p>Бренд: {product.brand ? product.brand : 'Нет'}</p>
-                    <p>Размер: {product.size ? product.size : 'Универсал'}</p>
-                    <p>Статус: {product.status ? product.status : 'Стандарт'}</p>
+                    <p>Бренд: {product.brand ? product.brand : "Нет"}</p>
+                    <p>Размер: {product.size ? product.size : "Универсал"}</p>
+                    <p>
+                      Статус: {product.status ? product.status : "Стандарт"}
+                    </p>
                   </div>
                   <div className="flex justify-between pt-2">
-                    <p>Цвет: {product.color ? product.color : 'Не указан'}</p>
-                    <p>Пол: {product.gender ? product.gender : 'Универсал'}</p>
+                    <p>Цвет: {product.color ? product.color : "Не указан"}</p>
+                    <p>Пол: {product.gender ? product.gender : "Универсал"}</p>
                   </div>
                 </div>
                 <div className="flex justify-between h-16">
-                  <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
-                    Забронировать
+                  <button
+                    onClick={() => addBasket(product)}
+                    className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+                  >
+                    Добавить в корзину
                   </button>
                   <button className="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg text-center hover:bg-green-700">
                     +

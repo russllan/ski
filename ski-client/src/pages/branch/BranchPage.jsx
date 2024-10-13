@@ -34,7 +34,7 @@ const shopsData = [
 function BranchPage() {
     const navigate = useNavigate();
   return (
-    <div className="flex flex-wrap justify-center space-x-4">
+    <div className="flex flex-wrap justify-center space-x-4 pt-10">
       {shopsData.map((shop, index) => (
         <div
           key={index}

@@ -6,6 +6,8 @@ import Header from "./components/header/Header";
 import ShopsPage from "./pages/shops/ShopsPage";
 import BranchPage from "./pages/branch/BranchPage";
 import EquipmentPage from "./pages/equipment/EquipmentPage";
+import PaymentForm from "./pages/payment/Payment";
+import Cart from "./components/cart/Cart";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/branch" element={<BranchPage />} />
           <Route path="/equipment" element={<EquipmentPage />} />
+          <Route path="/payment" element={<PaymentForm />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
     </>
